@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="discription" content="Vintage Boards" />
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/221ad82e2b.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./scripts/index.js" type="module"></script>
+  </head>
+  <body>
+    <div class="overlay"></div>
+    <header>
+      <div class="container">
+        <div class="subcontainer">
+          <nav class="navbar">
+            <a href="index.html">
+              <img class="logo" src="Pictures/Color logo edit.png" alt="logo"
+            /></a>
+            <ul class="nav-menu">
+              <li class="nav-item">
+                <a href="index.html" class="nav-link">Home</a>
+              </li>  
+              <li class="nav-item">
+                <a href="boards.html" class="nav-link">Boards</a>
+              </li>
+              <li class="nav-item">
+                <a href="about.html" class="nav-link">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a href="contact.html" class="nav-link">Contact Us</a>
+              </li>
+            </ul>
+            <div class="hamburger">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="contact-container">
+        <h1 class="h1">Contact Us</h1>
+        <div class="divider">
+      <section>
+            
+            <form action="#" method="post" id="contact-form">
+           <fieldset class="fieldset">
+            <legend class="legend">Your details:</legend>
+            <label class="form" for="name">Name:</label>
+            <input class="input" type="text" id="name" name="name" required minlength="5"><br>
+
+            <label  class="form" for="email">Email:</label>
+            <input class="input" type="email" id="email" name="email" required><br>
+
+            <label class="form"for="subject">Subject:</label>
+            <input class="input" type="text" id="subject" name="subject" required minlength="15"><br>
+
+            <label class="form" for="message">Message:</label>
+            <textarea class="textarea" id="message" name="message" required minlength="25"></textarea><br>
+
+            <button   class="Submitbtn" type="submit">Submit</button>
+          </fieldset>
+        </form>
+      </section>
+          <div class="">
+            <img
+              class="modularsynth"
+              src="Pictures/photo-1600148272607-7bbf03a40d3b.jpg"
+              alt="modular synth"
+            />
+          </div>
+        </div>
+  
+       
+       
+    
+            <div id="error-messages">
+            </div>
+    </main>
+    <footer>
+        <div class="footer">
+          <div class="subfooter">
+            <nav class="someicons">
+              <a href="index.html">
+                <img class="minilogo" src="Pictures/pngwing.com.png " alt="logo"
+              /></a>
+              <ul class="footer_icons">
+                <a
+                  href="https://web.facebook.com/?_rdc=1&_rdr"
+                  class="fa fa-facebook"
+                ></a>
+                <a href="https://twitter.com" class="fa fa-twitter"></a>
+                <a href="https://www.instagram.com/" class="fa fa-instagram"></a>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </footer>
+   
+    <script src="scripts/contact.js"></script>
+ 
+  </body>
+</html>
