@@ -9,6 +9,7 @@ const itemsPerPage = 8;
 
 export default async function getSynths() {
   try {
+    console.log("Before showLoader");
     showLoader();
 
     const response = await fetch(

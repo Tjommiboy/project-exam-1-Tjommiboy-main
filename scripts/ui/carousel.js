@@ -3,11 +3,28 @@ const slides = Array.from(track.children);
 console.log(slides);
 const slidewidth = slides[0].getBoundingClientRect().width;
 
-export default function setSlidePosition = (slide, index) => {
+const setSlidePosition = (slide, index) => {
   slide.style.left = slidewidth * index + "px";
 };
 
+slides.forEach(setSlidePosition);
+const prevButton = document.querySelector(".carousel__button--left");
+
+const moveToSlide = (track, currentSlide, targetSlide) => {
+  track.style.transform = "translateX(-" + targetSlide.style.left + ")";
+  currentSlide.classList.remove("current-slide");
+  targetSlide.classList.add("current-slide");
+};
+prevButton.addEventListener("click", (e) => {
+  const currentSlide = track.querySelector(".current-slide");
+  const prevSlide = currentSlide.previousElementSibling;
+  moveToSlide(track, currentSlide, prevSlide);
+});
+
 const nextButton = document.querySelector(".carousel__button--right");
-const prvcButton = document.querySelector(".carousel__button--left");
-const nav = document.querySelector("carousel__nav");
-const dots = Array.from(nav.children);
+
+nextButton.addEventListener("click", (e) => {
+  const currentSlide = track.querySelector(".current-slide");
+  const nextSlide = currentSlide.nextElementSibling;
+  moveToSlide(track, currentSlide, nextSlide);
+});
