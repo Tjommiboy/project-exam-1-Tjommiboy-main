@@ -1,11 +1,18 @@
 export default function renderPosts(posts, boardsElement) {
+  const carouselTrackContainer = document.createElement("div");
+  carouselTrackContainer.classList.add("carousel__track-container");
+
+  const carouselTrack = document.createElement("div");
+  carouselTrack.classList.add("carousel__track");
+  carouselTrackContainer.appendChild(carouselTrack);
+
   let parent;
 
   for (let i = 0; i < posts.length; i++) {
     if (i % 3 === 0) {
       parent = document.createElement("div");
-      parent.classList.add("posts-parent");
-      boardsElement.appendChild(parent);
+      parent.classList.add("posts-parent", "current-slide");
+      carouselTrack.appendChild(parent);
     }
 
     const post = posts[i];
@@ -16,9 +23,8 @@ export default function renderPosts(posts, boardsElement) {
     anchorElement.classList.add("specificcard");
     anchorElement.href = `productspecific.html?id=${post.id}`;
 
-    parent.appendChild(anchorElement);
-
     anchorElement.appendChild(postElement);
+    parent.appendChild(anchorElement);
 
     if (
       post.featured_media &&
@@ -38,4 +44,6 @@ export default function renderPosts(posts, boardsElement) {
       postElement.appendChild(titleElement);
     }
   }
+
+  boardsElement.appendChild(carouselTrackContainer);
 }

@@ -89,14 +89,12 @@
           </p>
         </div>
       </div>
-      <div class="wrapper">
-        <div class="carousel">
-          <div class="loader"></div>
+
+      <div class="midtstill">
+        <div class="wrapper">
           <div class="btn-wrapper">
-            <button id="left-btn">
+            <button class="carousel-btn carousel__button--left">
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="icon icon-tabler icon-tabler-arrow-badge-left"
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
@@ -110,7 +108,7 @@
                 <path d="M11 17h6l-4 -5l4 -5h-6l-4 5z"></path>
               </svg>
             </button>
-            <button id="right-btn">
+            <button class="carousel-btn carousel__button--right">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="icon icon-tabler icon-tabler-arrow-badge-right"
@@ -127,6 +125,16 @@
                 <path d="M13 7h-6l4 5l-4 5h6l4 -5z"></path>
               </svg>
             </button>
+          </div>
+          <div class="carousel">
+            <div class="loader"></div>
+
+            <div class="carousel__nav">
+              <button class="carousel__indicator current-slide"></button>
+              <button class="carousel__indicator"></button>
+              <button class="carousel__indicator"></button>
+              <button class="carousel__indicator"></button>
+            </div>
           </div>
         </div>
       </div>
