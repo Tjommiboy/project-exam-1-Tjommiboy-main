@@ -2,6 +2,7 @@
   --main-color: #e1f5f2;
   --font-color: #5a5d9d;
   --container-color: #e1f5f2c7;
+  --post-color: #e1f5f26b;
 }
 :root {
   --step--2: clamp(0.5206rem, 0.419rem + 0.508vw, 0.8rem);
@@ -225,7 +226,7 @@ a {
   cursor: pointer;
 }
 .carousel__indicator.current-slide {
-  background: rgba(58, 222, 255, 0.9);
+  background: #591cbba8;
 }
 
 .posts-parent {
@@ -260,7 +261,7 @@ a {
   position: relative;
 }
 .post {
-  background-color: var(--container-color);
+  background-color: var(--post-color);
   border-radius: 5px;
   box-shadow: 3px 3px 5px 1px;
   height: 236px;
@@ -271,6 +272,11 @@ a {
   width: 310px;
   justify-content: center;
   z-index: 100;
+  gri
+}
+
+.post:hover {
+  background-color: #5a5d9d2d;
 }
 .specificcard {
   font-size: var(--step--2);
@@ -461,7 +467,7 @@ a {
   width: 310px;
   margin: auto;
   height: 236px;
-  background-color: var(--container-color);
+  background-color: var(--post-color);
   box-shadow: 3px 3px 5px 1px;
   top: 0px;
   position: relative;
@@ -471,16 +477,16 @@ a {
   justify-content: center;
 }
 .boardscontainer :hover {
-  background-color: #5a5d9d5b;
+  background-color: #5a5d9d2d;
 }
 
 .boardcard {
   margin: 0px;
-  font-size: 1.2em;
+
   font-weight: 500;
   justify-content: center;
   display: flex;
-  color: var(--font-color);
+  color: white;
   top: 0px;
   position: relative;
 }
@@ -802,9 +808,10 @@ input[type="text"] {
   display: flex;
 }
 .aboutinfo {
-  margin: 0.8em;
+  margin: 2em;
   color: var(--font-color);
   font-size: 1.2em;
+  display: inline-grid;
 }
 
 /*------------------------FOOTER------------------*/
@@ -856,7 +863,7 @@ input[type="text"] {
   }
 
   .post {
-    background-color: var(--container-color);
+    background-color: var(--post-color);
     border-radius: 5px;
     box-shadow: 3px 3px 5px 1px;
     height: 205px;
@@ -907,6 +914,18 @@ input[type="text"] {
     height: 282px;
     border-radius: 5px;
     margin: 18px;
+  }
+  .infocard {
+    width: 80%;
+    margin: auto;
+    height: 536px;
+    background-color: var(--container-color);
+    box-shadow: 3px 3px 5px 1px;
+    top: 0px;
+    position: relative;
+    border-radius: 5px;
+    justify-content: center;
+    display: block;
   }
 }
 
@@ -1121,7 +1140,7 @@ input[type="text"] {
   .boardcard {
     top: 30px;
     position: relative;
-    font-size: 1.2em;
+
     font-weight: 400;
   }
   .imgboards {
@@ -1306,7 +1325,7 @@ input[type="text"] {
   .infocard {
     width: 100%;
     margin: auto;
-    height: 536px;
+    height: 482px;
     background-color: var(--container-color);
     box-shadow: 3px 3px 5px 1px;
     top: 0px;
@@ -1388,18 +1407,20 @@ input[type="text"] {
     top: 0;
     bottom: 0;
   }
-  .post {
+.post {
     background-color: var(--container-color);
     border-radius: 5px;
     box-shadow: 3px 3px 5px 1px;
     height: 133px;
-    margin: 12px;
+    margin: 33px;
     grid-template-columns: 1fr;
     display: block;
     gap: 2em;
-    width: 100%;
+    width: 104%;
     justify-content: center;
     z-index: 100;
-  }
+    left: -109px;
+    position: relative;
+}
 }
 /*-----------------------FOOTER----------------------*/

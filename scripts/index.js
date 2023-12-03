@@ -40,9 +40,11 @@ async function displayPosts() {
 
     prevButton.addEventListener("click", (e) => {
       const currentSlide = track.querySelector(".current-slide");
-      const prevSlide = currentSlide.previousElementSibling;
+      const prevSlide =
+        currentSlide.previousElementSibling || slides[slides.length - 1];
       const currentDot = dotsNav.querySelector(".current-slide");
-      const prevDot = currentDot.previousElementSibling;
+      const prevDot =
+        currentDot.previousElementSibling || dots[dots.length - 1];
       moveToSlide(track, currentSlide, prevSlide);
       updateDots(currentDot, prevDot);
     });
@@ -51,27 +53,29 @@ async function displayPosts() {
 
     nextButton.addEventListener("click", (e) => {
       const currentSlide = track.querySelector(".current-slide");
-      const nextSlide = currentSlide.nextElementSibling;
+      const nextSlide = currentSlide.nextElementSibling || slides[0];
       const currentDot = dotsNav.querySelector(".current-slide");
-      const nextDot = currentDot.nextElementSibling;
+      const nextDot = currentDot.nextElementSibling || dots[0];
       moveToSlide(track, currentSlide, nextSlide);
       updateDots(currentDot, nextDot);
     });
 
     dotsNav.addEventListener("click", (e) => {
       const targetDot = e.target.closest("button");
-      const currentSlide = track.querySelector(".current-slide");
-      const currentDot = dotsNav.querySelector(".current-slide");
-      const targetIndex = dots.findIndex((dot) => dot === targetDot);
-      const targetSlide = slides[targetIndex];
-      moveToSlide(track, currentSlide, targetSlide);
-      updateDots(currentDot, targetDot);
-      console.log(dots);
+      if (targetDot) {
+        const currentSlide = track.querySelector(".current-slide");
+        const currentDot = dotsNav.querySelector(".current-slide");
+        const targetIndex = dots.findIndex((dot) => dot === targetDot);
+        const targetSlide = slides[targetIndex];
+        moveToSlide(track, currentSlide, targetSlide);
+        updateDots(currentDot, targetDot);
+      }
     });
   } catch (error) {
     boardsElement.innerHTML = error.message;
+  } finally {
+    hideLoader();
   }
-  hideLoader();
 }
 
 displayPosts();
